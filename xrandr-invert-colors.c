@@ -195,6 +195,7 @@ int invert_colors_for_crtc(randr_state_t *state, int crtc_num){
 	uint16_t *gamma_b = &gamma_ramps[2*ramp_size];
 
 	copy_inverted_ramps(&(state->crtcs[crtc_num]), gamma_r, gamma_g, gamma_b);
+	printf("ramps: %u %u %u\n", (unsigned) *gamma_r, (unsigned) *gamma_g, (unsigned) *gamma_b);
 
 	/* Set new gamma ramps */
 	xcb_void_cookie_t gamma_set_cookie =
